@@ -1,0 +1,1642 @@
+/*--------------------------------------------------------------
+    Theme Name: Beer Launch Template
+    Theme URL: https://www.ogwebsolutions.com/
+    Author: OG Websolutions Pvt. Ltd.
+    Version:  1.0
+--------------------------------------------------------------*/
+
+
+/**
+@File: Beer Launch Theme Styles
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme..
+
+# General Style
+    ## Google Font
+    ## Preloader
+    ## Back to top button
+    ## Typography
+# Header
+# Footer
+# Home Page
+	## Banner Section
+	## Consequat Section
+    ## Orange Section
+    ## Praesent elementum Section
+    ## Authentic Section
+    ## Testimonial Section
+    ## FAQ Section
+# Upsell/Downsell Page
+# Order Page
+# Order confirmation(Thank you)/Order Cancelled Page
+# Privacy Policy &and Term & Conditions page
+
+**/
+
+
+/*--------------------------------------------------------------
+    # General
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Google Font
+----------------------------------*/
+
+@import url('../../../../css2-6');
+@import url('../../../../css2-7');
+
+/* ----------------------------------
+    ## Prelaoder
+----------------------------------*/
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+}
+
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #f2f2f2;
+    border-top: 6px solid #1577da;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ----------------------------------
+    ## Back to top button
+----------------------------------*/
+
+.backtotop {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    background-color: #005622;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 200ms linear;
+    display: none;
+}
+
+.backtotop::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -4px;
+    transform: rotate(-45deg);
+    height: 0px;
+    width: 0px;
+    border-width: 3px 3px 0 0;
+    border-style: solid;
+    padding: 5px;
+    border-color: #fff;
+}
+
+.backtotop:hover {
+    opacity: 1;
+    transition: opacity 200ms linear;
+}
+
+
+/* ----------------------------------
+    ## Typography
+----------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    color: #284a41;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bungee', cursive;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: #284a41;
+}
+
+p {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
+p:last-child {
+    margin-bottom: 30px;
+}
+
+dl,
+ol,
+ul {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #3c3c3c;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+    outline: none;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #13301d;
+}
+
+label {
+    font-weight: normal;
+}
+
+label.error {
+    color: #f00;
+    padding-left: 12px;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.form-control {
+    height: auto;
+    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: #aaaaaa;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #d5d5d5;
+    margin-bottom: 20px;
+}
+
+.form-control.error {
+    border-color: #f00;
+}
+
+.form-select {
+    background-image: url(../icons/carrot-icon.png);
+    background-size: 10px 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+ ::-webkit-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ ::-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-ms-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+
+/*------ Font Weight ------*/
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+
+/*------ Custom Text Color ------*/
+
+.text-green {
+    color: #284a41;
+}
+
+.text-white {
+    color: #fff;
+}
+
+
+/*------ Custom Background Color ------*/
+
+.bg-color-green {
+    background-color: #e8f3e0;
+}
+
+.bg-color-lightgreen {
+    background-color: #f7fcf4;
+}
+
+.bg-color-whiten {
+    background-color: #ffffff;
+}
+
+
+/*------ Box Shadow ------*/
+
+.box-shadow {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/*------ Button Style ------*/
+
+.btn {
+    color: #005622;
+    font-weight: 900;
+    background-color: #e8f3e0;
+    font-size: 18px;
+    line-height: 1;
+    padding: 18px 40px;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 0px;
+    border: 2px solid #005622 !important;
+    font-family: 'Bungee', cursive;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    color: #005622;
+}
+
+.btn-check:focus+.btn,.btn-check+.btn:active,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+    background-color:transparent !important;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .btn {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .btn {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .btn {
+        font-size: 15px;
+    }
+}
+
+
+/*------ image width ------
+
+@media only screen and (max-width: 767.98px) {
+    .w-100 {
+        width: 50% !important;
+    }
+}*/
+
+
+/*------ Custom Container ------*/
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .container {
+        max-width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+/*------ Section Spacer ------*/
+
+.sectionPadding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .sectionPadding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .sectionPadding {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .sectionPadding {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+}
+
+
+/*------ Section Title ------*/
+
+.section-title {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-title h2 {
+    font-size: 52px;
+    line-height: 1;
+    text-transform: normal;
+}
+
+.section-title p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .section-title h2 {
+        font-size: 42px;
+    }
+    .section-title p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .section-title h2 {
+        font-size: 32px;
+    }
+    .section-title h2 br,
+    .section-title p br {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {}
+
+@media only screen and (max-width: 575.98px) {
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+header {
+    /*padding: 10px 0;*/
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: transparent;
+}
+
+header.fixed {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+header .headerLogo {
+    width: 170px;
+}
+
+header .headerCall {
+    font-weight: 700;
+    color: #13301d;
+    font-size: 20px;
+}
+
+header .header-img {
+    width: 22px;
+}
+
+header a:hover {
+    text-decoration: underline !important;
+}
+
+@media only screen and (max-width: 767px) {
+    header .headerLogo {
+        width: 165px;
+    }
+    header .mail {
+        margin-top: 5px !important;
+    }
+    header .call-btn {
+        margin-top: 2px !important;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer .top-footer {
+    background-color: #13301e;
+    padding: 30px 0 30px;
+}
+
+footer .bottom-footer {
+    background-color: #082613;
+}
+
+footer .footer-menu .list-inline-item {
+    line-height: 1;
+}
+
+footer .footer-menu .list-inline-item a {
+    font-size: 15px;
+    line-height: 1;
+    color: #fff;
+    display: inline-block;
+}
+
+footer .footer-menu .list-inline-item a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-menu .list-inline-item:not(:last-child) {
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+footer .footer-menu ul li {
+    font-size: 15px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+    footer .footer-menu .list-inline-item a {
+        font-size: 14px;
+    }
+    footer .bottom-footer .copyright {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 576.98px) {
+    .footer-menu {
+        text-align: center;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Home Page
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Banner Section
+----------------------------------*/
+
+.bannerSection {
+    padding-top: 120px;
+}
+
+
+/*---- Left Section ----*/
+
+.bannerSection {
+    padding-bottom: 80px;
+}
+
+.bannerSection h1 {
+    font-size: 100px;
+    line-height: 1.1;
+    text-transform: capitalize;
+    font-family: 'Bungee', cursive;
+    color: #005622;
+}
+
+.bannerSection h1 span {
+    font-size: 69px;
+    display: block;
+    text-transform: none;
+    font-family: 'Bungee', cursive;
+    color: #005622;
+    line-height: 1;
+}
+
+.bannerSection h2 {
+    font-size: 32px;
+    color: #005622;
+    font-family: 'Bungee', cursive;
+    line-height: 2.4;
+}
+
+.bannerSection .left-col p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.bannerSection .left-col h2 img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .bannerSection h1 {
+        font-size: 80px;
+    }
+    .bannerSection h1 span {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .bannerSection h1 {
+        margin-bottom: 15px;
+        font-size: 50px;
+    }
+    .bannerSection h1 span {
+        font-size: 22px;
+    }
+    .bannerSection .left-col p {
+        font-size: 16px;
+    }
+    .bannerSection .left-col h2 {
+        font-size: 28px;
+    }
+    .bannerSection .left-col h2 img {
+        width: 25px;
+    }
+    .bannerSection .left-col{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .bannerSection {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    .bannerSection .left-col {
+        text-align: center;
+    }
+    .bannerSection h1 {
+        font-size: 45px;
+    }
+    .bannerSection h1 span {
+        font-size: 25px;
+    }
+    .bannerSection .left-col p {
+        font-size: 16px;
+    }
+    .bannerSection .left-col h2 img {
+        width: 20px;
+    }
+    .bannerSection .btn-sec {
+        margin-top: 20px !important;
+    }
+    .bannerSection .right-col {
+        margin-top: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .bannerSection h1 {
+        font-size: 35px;
+    }
+    .bannerSection h1 span {
+        font-size: 18px;
+    }
+    .bannerSection .left-col h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Exceptional Beer Section
+----------------------------------*/
+
+@media only screen and (max-width: 991.98px) {
+    .exceptional-beerSection .rightBlock {
+        text-align: center;
+    }
+    .exceptional-beerSection .leftBlock {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .exceptional-beerSection .img-fluid {
+        width: 75%;
+    }
+}
+
+
+/* ----------------------------------
+    ## Flavors Section
+----------------------------------*/
+
+.flavorsSection h2 span {
+    font-size: 22px;
+    display: block;
+    text-transform: none;
+    font-family: 'Bungee', cursive;
+    color: #284a41;
+    line-height: 2;
+}
+
+.flavorsSection .section-title p {
+    margin-bottom: 11px;
+}
+
+.flavorsSection .section-title p span {
+    font-weight: 500;
+}
+
+.flavorsSection .right-aligned {
+    padding-left: 100px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .flavorsSection .right-aligned {
+        padding-left: 87px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .flavorsSection .light-row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .flavorsSection .right-aligned {
+        padding-left: 10px;
+    }
+    .flavorsSection .section-title h2 br,
+    .flavorsSection .section-title p br {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .flavorsSection .right-aligned {
+        padding-left: 10px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Features Section
+----------------------------------*/
+
+.featuresSection ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.featuresSection ul li {
+    list-style: none;
+    margin-bottom: 42px;
+}
+
+.featuresSection ul li:last-child {
+    margin-bottom: 0;
+}
+
+.featuresSection ul li img {
+    margin-right: 50px;
+    flex-shrink: 0;
+}
+
+.featuresSection .feature-detail p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.featuresSection .btn {
+    color: #fff;
+    font-weight: 400;
+    background-color: #005622;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .featuresSection .feature-detail p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .featuresSection ul li img {
+        margin-right: 28px;
+    }
+    .featuresSection .feature-detail {
+        margin-top: 5px !important;
+    }
+    .featuresSection ul li {
+        margin-bottom: 10px;
+    }
+    .featuresSection .btn-sec {
+        margin-top: 0px !important;
+    }
+    .featuresSection .feature-row {
+        margin-top: 30px !important;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .featuresSection .right-container .img-fluid {
+        width: 50%;
+    }
+    .featuresSection .right-container .text-center {
+        margin-top: 0px !important;
+    }
+    .featuresSection .feature-detail p,
+    .featuresSection .left-container ul li {
+        margin-top: 20px !important;
+    }
+    .featuresSection .btn-sec {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .featuresSection ul li img {
+        margin-top: 15px;
+    }
+    .featuresSection .feature-detail p,
+    .featuresSection .left-container ul li {
+        margin-bottom: 0px;
+    }
+    .featuresSection .left-container ul li:last-child {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Video Section
+----------------------------------*/
+
+.video-section {
+    background-image: url(../images/banner-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 90px;
+    padding-bottom: 80px;
+    background-attachment: fixed;
+}
+
+.video-btn .btn {
+    background-color: transparent;
+    font-size: 0px;
+    border: transparent !important;
+}
+
+.modal-body .video {
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-sec .modal-body {
+    padding: 0px !important;
+    background-color: transparent;
+    line-height: 0;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .video-section {
+        padding-top: 70px;
+        padding-bottom: 60px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {}
+
+
+/* ----------------------------------
+    ## Choose Section
+----------------------------------*/
+
+@media only screen and (max-width: 991.98px) {
+    .chooseSection .section-title h2 {
+        margin-top: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .chooseSection .rightBlock,
+    .chooseSection h2 {
+        margin-top: 0px !important;
+        text-align: center;
+    }
+    .chooseSection .img-fluid {
+        width: 50%;
+        margin-top: 20px;
+    }
+    .chooseSection .section-title h2 {
+        margin-top: 30px !important;
+    }
+}
+
+
+/* ----------------------------------
+    ## Party Pub Section
+----------------------------------*/
+
+.party-pubSection {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-image: url(../images/banner-last.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.party-pubSection .btn {
+    color: #fff;
+    background-color: transparent;
+    font-weight: 400;
+}
+
+.party-pubSection .btn-sec a:hover {
+    background-color: #005622;
+}
+
+.party-pubSection h2 {
+    font-size: 51px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .party-pubSection h2 {
+        font-size: 43px;
+    }
+}
+
+@media only screen and (max-width:991.98px) {
+    .party-pubSection {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .party-pubSection h2 {
+        font-size: 32px;
+    }
+    .party-pubSection .btn {
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width:767.98px) {}
+
+@media only screen and (max-width: 575.98px) {
+    .party-pubSection h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ----------------------------------
+    ## Modal/Popup Style
+----------------------------------*/
+
+.modal-content {
+    background-color: #e8f3e0;
+}
+
+.modal-lg {
+    max-width: 700px !important;
+}
+
+.modal-body {
+    padding: 45px 45px 20px;
+}
+
+.modal .btn-close {
+    position: absolute;
+    z-index: 1155;
+    top: 5px;
+    right: 5px;
+}
+
+.modal-body h2 {
+    font-size: 32px;
+    color: #005622;
+}
+
+.modal-body h3 {
+    font-size: 20px;
+    color: #005622;
+}
+
+.modal-body P {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #284a41;
+    text-transform: uppercase;
+    font-family: 'Bungee', cursive;
+}
+
+.modal-body .btn {
+    border-radius: 0px;
+    padding: 15px 40px;
+    color: #fff;
+    font-weight: 400;
+    background-color: #005622;
+}
+
+.modal-body .title {
+    font-size: 18px;
+}
+
+.modal-body .btn {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .form-control {
+        font-size: 14px;
+    }
+    .modal-body .title {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .modal-body h2 {
+        font-size: 23px;
+    }
+    .modal-body h3 {
+        font-size: 16px;
+    }
+    .modal-body P {
+        font-size: 12px;
+    }
+    .form-control {
+        font-size: 13px;
+    }
+    .modal-body .btn {
+        padding: 15px 27px;
+    }
+    .modal-body .title {
+        font-size: 16px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Upsell/Downsell Page
+--------------------------------------------------------------*/
+
+.upsell h1,
+.downsell h1 {
+    font-size: 52px;
+}
+
+.offerSection h2 {
+    font-size: 70px;
+    line-height: 1.1;
+    text-transform: capitalize;
+    font-family: 'Bungee', cursive;
+}
+
+.offerSection h2 span {
+    font-size: 24px;
+    display: block;
+    text-transform: none;
+    font-family: 'Bungee', cursive;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.offerSection h2:after {
+    content: '';
+    display: block;
+    position: relative;
+    border-bottom: 3px dotted #284a41;
+    width: 40%;
+    margin: auto;
+    padding-top: 35px;
+}
+
+.offerSection .offer-row {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.offerSection .upsell-detail p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.offerSection .btn {
+    color: #fff;
+    font-weight: 400;
+    background-color: #005622;
+    padding: 18px 55px;
+}
+
+.offerSection .btn-sec .bottom-text {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.offerSection .btn-sec .bottom-text a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .upsell h1,
+    .downsell h1 {
+        font-size: 38px;
+    }
+    .upsell-detail {
+        margin-top: 20px !important;
+    }
+    .offerSection h2 {
+        font-size: 55px;
+    }
+    .offerSection .upsell-detail p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .offerSection h2 {
+        font-size: 50px;
+    }
+    .offerSection h2 span {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .offerSection .offer-row {
+        text-align: center;
+    }
+    .offerSection .upsell-detail p {
+        font-size: 16px;
+    }
+    .offerSection .upsell-beer {
+        margin-top: 0px !important;
+    }
+    .offerSection .offer-row .offer-img {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .upsell h1,
+    .downsell h1 {
+        font-size: 28px;
+    }
+    .offerSection h2 {
+        font-size: 30px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Order Page
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+## Order Section
+----------------------------------*/
+
+.order-page .bannerSection h1 {
+    font-size: 52px;
+}
+
+.formcontentSec {
+    border-radius: 10px;
+    max-width: 1010px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    -webkit-box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+}
+
+.formcontentSec .form-status {
+    margin-top: 40px;
+    display: none;
+}
+
+.your_productlist {
+    background: #e8f3e0;
+    padding: 15px;
+    float: left;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 30px;
+}
+
+.order_Section .left-col .your_productlist ul {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.order_Section .left-col .your_productlist li {
+    background: none;
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #757575;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.order_Section .left-col .your_productlist li:not(:last-child) {
+    border-bottom: 1px solid #b0d2de;
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+}
+
+.order_Section .left-col .your_productlist li:first-child,
+.order_Section .left-col .your_productlist li:last-child {
+    color: #000;
+    font-size: 15px;
+}
+
+.order_Section .left-col .your_productlist li:last-child {
+    font-size: 18px;
+    padding-left: 0;
+}
+
+.order_Section .left-col .your_productlist li .pull-left {
+    float: left;
+}
+
+.order_Section .left-col .your_productlist li .pull-right {
+    float: right;
+}
+
+.order_Section h2.headingsec {
+    color: #284a41;
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 2px dotted #c7c7c7;
+    padding: 0 0 20px;
+    margin: 0 0 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.order_Section .btn-outer {
+    text-align: center;
+}
+
+.declaration p {
+    font-size: 14px;
+    color: #9b9b9b;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0 15px;
+}
+
+.order_Section .cards {
+    text-align: center;
+}
+
+.order_Section .cards img {
+    display: inline-block;
+}
+
+.order_Section .pay-btn.btn {
+    font-size: 22px;
+    padding: 20px 100px;
+}
+
+.order_Section .btn {
+    background-color: #005622 !important;
+}
+
+.pay-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.pay-btn .btn-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+}
+
+.pay-btn .btn-subtitle {
+    font-size: 16px;
+    opacity: 0.8;
+    font-weight: 400;
+    color: #fff;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .order-page .bannerSection p {
+        font-size: 20px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 22px;
+        padding: 20px 85px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .order_Section .container {
+        max-width: 720px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 20px;
+    }
+    .order-page .bannerSection h1 {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .formcontentSec {
+        padding: 15px;
+    }
+    .order_Section h2.headingsec {
+        font-size: 18px;
+    }
+    .order_Section .left-col .your_productlist li {
+        font-size: 12px;
+    }
+    .order_Section .left-col .your_productlist li:first-child,
+    .order_Section .left-col .your_productlist li:last-child {
+        font-size: 14px;
+    }
+    .declaration p {
+        font-size: 13px;
+    }
+    .order_Section .pay-btn.btn {
+        font-size: 18px;
+    }
+    .order-page .bannerSection p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .order_Section .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .order-page .bannerSection h1 {
+        font-size: 30px;
+    }
+    .order-page .bannerSection p {
+        font-size: 16px;
+    }
+    .order_Section .pay-btn.btn {
+        padding: 18px 30px;
+    }
+    .pay-btn .btn-subtitle {
+        font-size: 14px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Order confirmation(Thank you)/Order Cancelled Page
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Thank You Content Section
+----------------------------------*/
+
+.thank-you .bannerSection h1,
+.order-cancelled .bannerSection h1 {
+    font-size: 52px;
+}
+
+.thank-you .bannerSection p,
+.order-cancelled .bannerSection p {
+    font-size: 18px;
+}
+
+.thank-youSection h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.thank-youSection p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+@media screen and (max-width:991px) {
+    .thank-you .bannerSection h1,
+    .order-cancelled .bannerSection h1 {
+        font-size: 42px;
+    }
+}
+
+@media screen and (max-width:568px) {
+    .thank-you .bannerSection p,
+    .order-cancelled .bannerSection p {
+        font-size: 16px;
+    }
+    .thank-you .bannerSection h1,
+    .order-cancelled .bannerSection h1 {
+        font-size: 30px;
+    }
+    .thank-youSection p {
+        font-size: 17px;
+    }
+    .thank-youSection .fb-logo img {
+        width: 80%;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Privacy Policy and Term & Conditions page
+--------------------------------------------------------------*/
+
+.termcond_privacypilocy h1 {
+    font-size: 52px;
+}
+
+.privacypolicyterms h2 {
+    font-size: 35px;
+}
+
+.privacypolicyterms h3 {
+    font-size: 24px;
+}
+
+.privacypolicyterms h4 {
+    font-size: 22px;
+}
+
+.privacypolicyterms p {
+    font-size: 18px;
+}
+
+.privacypolicyterms p a {
+    color: #1577da;
+}
+
+.privacypolicyterms li {
+    font-size: 18px;
+}
+
+.privacypolicyterms .highlight {
+    font-weight: 500;
+}
+
+.privacypolicyterms p,
+.privacypolicyterms li,
+.privacypolicyterms h2,
+.privacypolicyterms h3,
+.privacypolicyterms h4 {
+    font-weight: 500;
+}
+
+.termcond_privacypilocy .section-title {
+    padding-bottom: 0;
+}
+
+@media only screen and (max-width: 991.99px) {
+    .termcond_privacypilocy h1 {
+        font-size: 42px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .privacypolicyterms h2 {
+        font-size: 28px;
+    }
+    .privacypolicyterms h3 {
+        font-size: 22px;
+    }
+    .privacypolicyterms h4 {
+        font-size: 20px;
+    }
+    .privacypolicyterms p,
+    .privacypolicyterms li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 567.98px) {
+    .termcond_privacypilocy h1 {
+        font-size: 30px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Error page
+--------------------------------------------------------------*/
+
+.error .btn {
+    color: #fff;
+    background-color: #005622;
+    font-weight: 500;
+}
+
+/* stripe card */
+.payment-outer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 22px 15px 5px;
+    background-color: #e9e9e9;
+    position: relative;
+    margin-top:10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.payment-outer:before{
+    content: "";
+    position: absolute;
+    left: 35px;
+	top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e9e9e9;
+}
+.payment-outer .form-group{
+    width: 33.33%;
+    padding: 0 7px;
+}
+.payment-outer .form-group.card-number-group{
+    width: 100%;
+}
+.payment-outer .form-group #card_number{
+    background-image: url('../icons/cards.png');
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: right 10px center;
+    padding-right: 140px;
+}
+.paypal-card-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:15px;
+}
+.paypal-card-group label:first-child{
+    margin-bottom: 10px;
+}
+.form-group.btn-outer{
+    position: relative;
+}
+.form-group.btn-outer #loader{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+	border-radius: 5px;
+}
+form #loader img{
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+@media only screen and (max-width: 390px) {
+    .payment-outer{
+   	 padding: 15px 10px 0px;
+    }
+    .payment-outer .form-group #card_number{
+   	 padding-right: 100px;
+   	 background-size: 80px;
+    }
+    form select{
+   	 background-size: 12px;
+    }
+}
+/* stripe card end */
+

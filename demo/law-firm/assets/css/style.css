@@ -1,0 +1,1131 @@
+/*--------------------------------------------------------------
+    Theme Name: Law Firm Template
+    Theme URL: https://www.ogwebsolutions.com/
+    Author: OG Websolutions Pvt. Ltd.
+    Version:  1.0
+--------------------------------------------------------------*/
+
+
+/**
+@File:  Law Firm  Theme Styles
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+# General Style
+    ## Google Font
+    ## Preloader
+    ## Back to top button
+    ## Typography
+# Header
+# Footer
+# Home Page
+	## Banner Section
+	## About Section
+    ## Practice Section
+    ## Choose Us Section
+    ## Qualities Section
+    ## Attorneys Section
+    ## Clients Section
+    ## Help Section
+# Thank you Page
+# Privacy Policy & and Term & Conditions page
+
+**/
+
+
+/*--------------------------------------------------------------
+    # General
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Google Font
+----------------------------------*/
+
+@import url('../../../../css2-15');
+@import url('../../../../css2-16');
+
+/* ----------------------------------
+    ## Prelaoder
+----------------------------------*/
+
+
+/* ## Preload Spinner */
+
+.preloadSpinner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 99999;
+}
+
+.preloadSpinner::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: #f5f7fa;
+    border: 1px solid #99be4f;
+    border-top: 10px dotted #99be4f;
+    border-radius: 100%;
+    animation: spinner 500ms infinite ease-in-out;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width:767.98px) {
+    .preloadSpinner::after {
+        width: 50px;
+        height: 50px;
+        margin-top: -25px;
+        margin-left: -25px;
+        border-top: 5px dotted #99be4f;
+    }
+}
+
+
+/* ----------------------------------
+    ## Back to top button
+----------------------------------*/
+
+.backtotop {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    background-color: #e3b969;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 200ms linear;
+    display: none;
+}
+
+.backtotop::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -4px;
+    transform: rotate(-45deg);
+    height: 0;
+    width: 0;
+    border-width: 3px 3px 0 0;
+    border-style: solid;
+    padding: 5px;
+    border-color: #fff;
+}
+
+.backtotop:hover {
+    opacity: 1;
+    transition: opacity 200ms linear;
+}
+
+
+/* ----------------------------------
+    ## Typography
+----------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    color: #2a2a2a;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: #2a2a2a;
+    line-height: 1.2;
+}
+h3{
+    font-size: 24px;
+}
+p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #2a2a2a;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 767.98px) {
+    h3{
+        font-size: 20px;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+
+.border-ylw::before {
+    border-top: 1px solid #e3b969;
+    content: '';
+    display: block;
+    position: relative;
+    width: 25%;
+    margin-bottom: 40px !important;
+    margin-top: 30px !important;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+dl,
+ol,
+ul {
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #3c3c3c;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+label {
+    font-weight: normal;
+}
+
+label.error {
+    color: #f00;
+    padding-left: 12px;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.form-control {
+    height: auto;
+    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: #aaaaaa;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #d5d5d5;
+    margin-bottom: 20px;
+}
+
+.form-control.error {
+    border-color: #f00;
+}
+
+.form-select {
+    background-image: url(../icons/carrot-icon.png);
+    background-size: 10px 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+ ::-webkit-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ ::-moz-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+ :-ms-input-placeholder {
+    opacity: 1;
+    color: #aaaaaa;
+}
+
+figure {
+    margin: 0 0 0rem !important;
+}
+
+
+/*------ Font Weight ------*/
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+
+/*------ Custom Background Color ------*/
+
+.bg-white-clr {
+    background-color: #fff;
+}
+
+.bg-skin-clr {
+    background-color: rgb(251, 247, 238);
+}
+
+.bg-gray {
+    background-color: #ebebeb;
+}
+
+
+/*------ Custom Text Color ------*/
+
+.text-yellow {
+    color: #e3b969;
+}
+
+
+/*========== Image ==========*/
+
+img {
+    max-width: 100%;
+}
+
+
+/*------ Box Shadow ------*/
+
+.box-shadow {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/*------ Button Style ------*/
+
+.btn {
+    color: #fff !important;
+    font-weight: 600;
+    background-color: #e3b969 !important;
+    font-size: 18px;
+    line-height: 1;
+    padding: 15px 20px;
+    box-shadow: inset 0 0px 0px 0 rgb(255 255 255 / 22%), 0 233px 233px 0 rgb(255 255 255 / 12%);
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    border: 2px solid #e3b969 !important;
+}
+.btn:hover{opacity: 0.8;}
+.btn:hover {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .btn {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .btn {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .btn {
+        font-size: 15px;
+    }
+}
+
+
+/*------ image width ------*/
+
+@media only screen and (max-width: 575.98px) {
+    .img-fluid {
+        max-width: 70%;
+    }
+}
+
+
+/*------ Custom Container ------*/
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .container {
+        max-width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+
+/*------ Section Spacer ------*/
+
+.sectionPadding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .sectionPadding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+
+/*------ Section Title ------*/
+
+/*.section-title {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}*/
+
+.section-title h2 {
+    font-size: 52px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.section-title h3 {
+    font-size: 28px;
+}
+@media only screen and (max-width: 1199.98px) {
+    .section-title h2{
+        font-size: 45px;
+        margin-top: 0px !important;
+    }
+    .section-title .signature-img{
+        margin-top: 25px !important;
+    }
+}
+@media only screen and (max-width: 991.98px) {
+    .section-title h2,
+    .section-title p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .section-title h2 {
+        font-size: 35px;
+    }
+}
+
+/*----------------------------------------------------------
+# Header
+---------------------------------------------------------*/
+
+header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+
+header.sticky {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 5px #c1c1c1;
+    box-shadow: 0 0 5px #c1c1c1;
+    z-index: 11;
+}
+
+.header-logo {
+    max-width: 170px;
+    width: 100%;
+}
+
+header .headerCall {
+    font-weight: 500;
+    color: #e3b969;
+    font-size: 20px;
+}
+
+header .header-img {
+    width: 22px;
+}
+
+@media (max-width:767.98px) {
+    header p {
+        font-size: 13px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer {
+    padding: 40px 0 40px;
+    background-color: rgb(31, 23, 3);
+}
+
+footer .footer-bottom .list-inline-item {
+    line-height: 1;
+}
+
+footer .footer-bottom .list-inline-item a {
+    font-size: 15px;
+    line-height: 1;
+    color: #fff !important;
+    display: inline-block;
+}
+
+footer .footer-bottom .list-inline-item a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-bottom .list-inline-item:not(:last-child) {
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+footer .footer-bottom p {
+    margin-bottom: 20px;
+}
+
+footer .footer-bottom .copyright {
+    font-size: 15px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    footer {
+        padding: 30px 0 30px;
+    }
+    footer .footer-bottom .list-inline-item a,
+    footer .footer-bottom .copyright,
+    footer .footer-bottom .p {
+        font-size: 14px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Home Page
+--------------------------------------------------------------*/
+
+
+/* ----------------------------------
+    ## Banner Section
+----------------------------------*/
+
+.bannerSection {
+    background: url(../images/law-heroBananer.jpeg);
+    background-repeat: no-repeat;
+    padding-top: 195px;
+    padding-bottom: 130px;
+    background-position: center;
+    background-size: cover;
+}
+.bannerSection .btn-sec .btn{
+    background-color: transparent;
+    color: #e3b969
+}
+.bannerSection h1 span {
+    font-size: 30px;
+    display: block;
+    text-transform: capitalize;
+    font-family: 'Noto Serif', serif;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.bannerSection h1 {
+    font-size: 60px;
+    line-height: 1.3;
+    text-transform: capitalize;
+}
+@media only screen and (max-width: 1199.98px) {
+    .bannerSection h1 {
+        font-size: 50px;
+    }
+}
+@media only screen and (max-width: 991.98px) {
+    .bannerSection {
+        padding-top: 175px;
+        padding-bottom: 130px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .bannerSection h1 {
+        font-size: 45px;
+    }
+    .bannerSection {
+        padding-bottom: 95px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .bannerSection h1 {
+        font-size: 32px;
+    }
+}
+
+
+/* ----------------------------------
+    ## About Section
+----------------------------------*/
+
+@media only screen and (max-width: 991.98px) {
+    .about-section .home-img,
+    .about-section .signature-img,
+    .about-section .btn-sec {
+        text-align: center;
+    }
+    .about-section .right-col {
+        margin-top: 35px;
+    }
+    .about-section .border-ylw::before{
+        width: 15%;
+        margin: 0 auto;
+    }
+}
+
+/* ----------------------------------
+    ## Practice Section
+----------------------------------*/
+
+.practice-detail .item {
+    border: 1px solid #f3c242;
+     background: #f9f4e9;
+    height: 100%;
+    padding: 32px 30px;
+}
+.practice-detail h3{
+    font-size: 40px;
+    color: rgb(214, 202, 176);
+}
+.practice-detail h4 {
+    font-size: 26px;
+    text-transform: capitalize;
+    margin: 20px 0 15px;
+}
+.practiceSection .section-title .border-ylw::before{
+    width: 15%;
+}
+.practiceSection .border-ylw::before{
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .practice-detail h4 {
+        font-size: 21px;
+    }
+    .practice .item {
+        padding: 20px 12px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .practice .item {
+        padding: 20px 25px;
+    }
+    .practice .service-col {
+        margin-bottom: 20px;
+    }
+}
+
+/* ----------------------------------
+    ## Choose Us Section
+----------------------------------*/
+
+@media only screen and (max-width: 991.98px) {
+    .choose-usSection .choose-img,
+    .choose-usSection .btn-sec {
+        text-align: center;
+    }
+    .choose-usSection .left-col {
+        margin-top: 35px;
+    }
+    .choose-usSection .border-ylw::before{
+        width: 15%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 767.98px) {
+    .choose-usSection .section-title h2{
+        margin-top:30px !important
+    }   
+}
+@media only screen and (max-width: 575.98px) {
+    .choose-usSection .section-title h2{
+        margin-top:10px !important
+    }   
+}
+/* ----------------------------------
+    ## Qualities Section
+----------------------------------*/
+
+.qualities-section{
+    background: url(../images/law-banner.jpg);
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-size: cover;
+    background-position: center;
+}
+.qualities-section h3 {
+    font-size: 50px;
+}
+
+.qualities-section ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0px !important;
+}
+.qualities-section ul li {
+    padding:15px 0px;
+}
+
+.qualities-section ul li {
+    width: 33.333%;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .qualities-section h3 {
+        font-size: 40px;
+    }
+    
+}
+
+@media only screen and (max-width:767.98px) {
+    .qualities-section h3 {
+        font-size: 30px;
+    }
+    .qualities-section p{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .qualities-section ul {
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .qualities-section ul li {
+        width: 50%;
+    }
+    .qualities-section ul li:third-child{
+        margin-top:20px !important;
+    }
+}
+
+
+/* ----------------------------------
+    ## Attorneys Section
+----------------------------------*/
+.attorneysSection .attorneys-box p{
+    font-size: 16px;
+}
+.attorneysSection .section-title .border-ylw::before{
+    width: 15%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .attorneysSection .attorneys-box{
+        margin-bottom:25px;
+    }
+    .attorneysSection .last-col:last-child{
+        margin-bottom: -30px;
+    }
+   
+}
+
+/* ----------------------------------
+    ## Clients Section
+----------------------------------*/
+.clientsSection .clients-detail{
+    width: 100%;
+    max-width: 870px;
+    margin: 0 auto;
+}
+.clientsSection .clients-detail p{
+    font-style: italic
+}
+.clientsSection .section-title h2::after {
+    border-top: 1px solid #e3b969;
+    content: '';
+    display: block;
+    position: relative;
+    width: 15%;
+    margin-bottom: 40px !important;
+    margin-top: 30px !important;
+    margin: 0 auto;
+}
+.testimonial-img .img-fluid{
+    border-radius:50%;
+}
+@media only screen and (max-width: 991.98px) {
+    .clients-detail{
+        text-align: center;
+        margin-top: 0px !important;
+    }
+}
+@media only screen and (max-width: 767.98px) {
+    .clientsSection .clients-detail .right-col{
+        margin-top: 20px;
+    }
+}
+/* ----------------------------------
+    ## Help Section
+----------------------------------*/
+
+.helpSection .section-title .border-ylw::before{
+    width: 15%;
+    margin: 0 auto;
+}
+.helpSection{
+    background-color: rgb(42, 32, 6);
+}
+.helpSection .email-img,
+.helpSection .phone-img{
+    width: 20px;
+}
+.helpSection hr{
+    border: 1px solid #e3b969;
+}
+.helpSection .span-text{padding-left: 8px;}
+.helpSection hr{margin: auto;}
+
+@media only screen and (max-width: 991.98px) {
+    .helpSection .help-col{
+        width: 100%;
+    }
+    /*.helpSection .help-col:nth-child(2){
+        margin-top: 10px;
+        margin-bottom: 34px!important;
+    }*/
+}
+@media only screen and (max-width: 575.98px) {
+    .helpSection .help-col:nth-child(2){
+        margin-top: 20px;
+        margin-bottom: 20px!important;
+    }
+}
+/* ----------------------------------
+    ## Modal/Popup Style
+----------------------------------*/
+
+.modal-lg {
+    max-width: 645px !important;
+}
+
+.modal-body {
+    padding: 40px 40px;
+}
+
+.modal .btn-close {
+    position: absolute;
+    z-index: 1155;
+    top: 5px;
+    right: 5px;
+}
+
+.modal-body h2 {
+    font-size: 38px;
+}
+
+.modal-body h3 {
+    font-size: 20px;
+}
+
+.modal-body P {
+    font-size: 14px;
+    line-height: 1.5;
+}
+.modal-body a {
+    color: #e3b969;
+}
+
+.modal-body a:hover {
+    text-decoration: underline;
+}
+@media only screen and (max-width: 767.98px) {
+    .form-control {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .modal-body h2 {
+        font-size: 28px;
+    }
+    .modal-body h3 {
+        font-size: 16px;
+    }
+    .modal-body P {
+        font-size: 12px;
+    }
+    .form-control {
+        font-size: 13px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Order confirmation(Thank you)/Order Cancelled Page
+--------------------------------------------------------------*/
+
+.thank-youbanner {
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+
+
+/*========== Social Share ==========*/
+
+.social-share .fa {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 2px;
+    border-radius: 3px;
+}
+
+.social-share .fa:hover {
+    opacity: 0.8;
+}
+
+.social-share .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.social-share .fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.social-share {
+    padding: 30px 0;
+}
+
+.social-share span {
+    font-family: 'Sarala', sans-serif;
+    font-size: 13px;
+    padding-left: 5px;
+}
+
+
+/* ----------------------------------
+    ## Thank You Content Section
+----------------------------------*/
+
+.thank-you .thank-youbanner h1 {
+    font-size: 60px;
+}
+.thankyouContentSec h3{font-size: 20px;}
+
+.thankyouContentSec h4{font-size:18px;}
+.thankyouContentSec p {
+    line-height: 1.5;
+}
+
+@media only screen and (max-width: 1199.98px) {
+    .thank-you .thank-youbanner h1 {
+        font-size: 55px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    
+}
+
+@media only screen and (max-width: 767.98px) {
+    .thank-you .thank-youbanner {
+        padding-top: 135px;
+        padding-bottom: 75px;
+    }
+    .thank-you .thank-youbanner h1 {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .thank-you .thank-youbanner h1 {
+        font-size: 38px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Privacy Policy and Term & Conditions page
+--------------------------------------------------------------*/
+
+.termcond_privacypilocy {
+    padding-top: 120px !important;
+    padding-bottom: 80px;
+}
+
+.termcond_privacypilocy h1 {
+    font-size: 60px;
+}
+
+.privacypolicyterms h2 {
+    font-size: 40px;
+}
+
+.privacypolicyterms h3 {
+    font-size: 24px;
+}
+
+.privacypolicyterms h4 {
+    font-size: 22px;
+}
+
+.privacypolicyterms p a {
+    color: #1577da;
+}
+
+.privacypolicyterms li {
+    font-size: 18px;
+}
+
+.privacypolicyterms .highlight {
+    font-weight: 500;
+}
+
+.privacypolicyterms p,
+.privacypolicyterms li,
+.privacypolicyterms h2,
+.privacypolicyterms h3,
+.privacypolicyterms h4 {
+    font-weight: 500;
+}
+
+.termcond_privacypilocy .section-title {
+    padding-bottom: 0;
+}
+
+@media only screen and (max-width: 1199.99px) {
+    .termcond_privacypilocy h1 {
+        font-size: 55px;
+    }
+}
+
+@media only screen and (max-width: 991.99px) {
+    .privacypolicyterms h2 {
+        text-align: left;
+    }
+    .termcond_privacypilocy h1 {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .termcond_privacypilocy {
+        padding-bottom: 50px;
+    }
+    .privacypolicyterms h2 {
+        font-size: 28px;
+    }
+    .privacypolicyterms h3 {
+        font-size: 22px;
+    }
+    .privacypolicyterms h4 {
+        font-size: 20px;
+    }
+    .privacypolicyterms li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 567.98px) {
+    .termcond_privacypilocy h1 {
+        font-size: 35px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+#  Error page
+--------------------------------------------------------------*/
